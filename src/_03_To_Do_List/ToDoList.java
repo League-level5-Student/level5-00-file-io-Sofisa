@@ -1,6 +1,45 @@
 package _03_To_Do_List;
 
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+
 public class ToDoList {
+	JFrame frame;
+	JPanel panel;
+	JButton add;
+	JButton view;
+	JButton remove;
+	JButton save;
+	JButton load;
+	public static void main(String[] args) {
+		ToDoList todo = new ToDoList();
+		todo.build();
+		
+		
+		
+	}
+	
+	void build() {
+		frame = new JFrame();
+		frame.setSize(700,100);
+		frame.setVisible(true);
+		panel = new JPanel();
+		frame.add(panel);
+		add = new JButton();
+		view = new JButton();
+		remove = new JButton();
+		save = new JButton();
+		load = new JButton();
+		panel.add(add);
+		add.setLabel("Add Task");
+		panel.add(view);
+		view.setLabel("View Tasks");
+		panel.add(remove);
+		panel.add(save);
+		panel.add(load);
+		
+	}
 	/*
 	 * Create a program with five buttons, add task, view tasks, remove task, save list, and load list. 
 	 *
