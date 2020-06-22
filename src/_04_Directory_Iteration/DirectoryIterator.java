@@ -1,6 +1,8 @@
 package _04_Directory_Iteration;
 
 import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
 
 import javax.swing.JFileChooser;
 
@@ -19,9 +21,28 @@ public class DirectoryIterator {
 			if(files != null) {
 				for(File f : files) {
 				  System.out.println(f.getAbsolutePath());
+				  String file = f.getAbsolutePath();
+							if (file.contains(".java")) {
+								try {
+								FileWriter fw = new FileWriter(file , true);
+								fw.write("\n//Copyright © 2020 Velarde Sofia");
+								
+								fw.close();
+							} catch (IOException e) {
+								e.printStackTrace();
+							}
+							}
+				  
+				  
 				}
 			}
-		}
+			
+					
+			
+				
+			}
+		
+		
 		
 		/*
 		 * Your task is to write a program that iterates through the src folder of this current Java Project. 
